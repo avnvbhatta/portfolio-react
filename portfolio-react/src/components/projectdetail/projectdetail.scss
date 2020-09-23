@@ -2,11 +2,26 @@
 @import '../../App.scss';
 .container{
     position: relative;
+    background: $primary-color-green;
+    min-height: 100vh;
+
+    // background-image: url('../../images/background.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
     h1{
         font-size: 2.5em;
         color: $primary-color-blue;
         text-align: center;
+        padding-top: 10vh;
+    }
 
+    .summary{
+        margin: 0.5em 0;
+        color: $primary-color-blue;
+        text-align: center;
+        font-size: 1.2em;
     }
 
     .content{
@@ -41,10 +56,7 @@
                 color: $primary-color-blue;
                 margin: 0.5em 0;
             }
-            p{
-                margin: 0.5em 0;
-                color: white;
-            }
+            
             h3{
                 color: $primary-color-blue;
                 margin: 0.8em 0;
@@ -56,11 +68,11 @@
                 flex-wrap: wrap;
 
                 .role, .technology{
-                    background: #FFF7E6;
+                    background: $primary-color-blue;
                     padding: 0.2em 0.8em;
                     margin: 0.2em;
                     font-size: 0.9em;
-                    border: 2px solid #FBA03C;
+                    border: 2px solid $primary-color-blue;
                     color: $primary-color-blue;
                     text-transform: lowercase;
 
@@ -68,7 +80,7 @@
             }
 
             li{
-                color: white;
+                color: $primary-color-blue;
                 &::before {
                     content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
                     color: $primary-color-blue; /* Change the color */

@@ -1,13 +1,69 @@
 import React from 'react';
 import './projectdetail.scss';
+import TagWithMeLogo from "../../images/tagwithme.png";
+import TwitchStitchLogo from "../../images/twitchstitch.png";
+import MoodMateLogo from "../../images/moodmate.png";
+import {
+    useRouteMatch,
+    useParams
+  } from "react-router-dom";
 
-const ProjectDetail = (props) => {
-    const projectData = props.projectData;
+const projectsData = {
+    TagWithMe: {
+        projectName: 'TagWithMe',
+        projectLogo: TagWithMeLogo,
+        projectScreenshots: [TagWithMeLogo, TagWithMeLogo, TagWithMeLogo],
+        projectSummary: 'Full stack web application for interacting with users interested in social events.',
+        projectScopes: ['UI/UX', 'Front-End', 'Back-End', 'Database Management', 'Project Management'],
+        projectTechnologies: ['React', 'Redux', 'Node', 'Express', 'Postgres', 'Socket.io', 'Ant Design', 'Sass', 'TicketMasterAPI', 'MapBoxAPI'],
+        projectFeatures: [
+            'Designed and developed responsive front-end with reusable components using React, Redux and Ant Design',
+            'Developed and maintained databases and REST API using Node.js, Express and PostgreSQL',
+            'Integrated TicketMaster API for fetching social events data and MapBox API for location and map data',
+            'Implemented push notifications and live chat using Socket.io'
+        ]
+    },
+    TwitchStitch: {
+        projectName: 'TwitchStitch',
+        projectLogo: TwitchStitchLogo,
+        projectScreenshots: [TwitchStitchLogo, TwitchStitchLogo, TwitchStitchLogo],
+        projectSummary: 'React app to watch multiple Twitch streams simultaneously.',
+        projectScopes: ['UI/UX', 'Front-End', 'Back-End', 'Database Management', 'Project Management'],
+        projectTechnologies: ['React', 'Redux', 'Node', 'Express', 'Postgres', 'Socket.io', 'Ant Design', 'Sass', 'TicketMasterAPI', 'MapBoxAPI'],
+        projectFeatures: [
+            'Designed and developed responsive front-end with reusable components using React, Redux and Ant Design',
+            'Developed and maintained databases and REST API using Node.js, Express and PostgreSQL',
+            'Integrated TicketMaster API for fetching social events data and MapBox API for location and map data',
+            'Implemented push notifications and live chat using Socket.io'
+        ]
+    },
+    MoodMate: {
+        projectName: 'MoodMate',
+        projectLogo: MoodMateLogo,
+        projectScreenshots: [MoodMateLogo, MoodMateLogo, MoodMateLogo],
+        projectSummary: 'Full stack web application for interacting with users interested in social events.',
+        projectScopes: ['UI/UX', 'Front-End', 'Back-End', 'Database Management', 'Project Management'],
+        projectTechnologies: ['React', 'Redux', 'Node', 'Express', 'Postgres', 'Socket.io', 'Ant Design', 'Sass', 'TicketMasterAPI', 'MapBoxAPI'],
+        projectFeatures: [
+            'Designed and developed responsive front-end with reusable components using React, Redux and Ant Design',
+            'Developed and maintained databases and REST API using Node.js, Express and PostgreSQL',
+            'Integrated TicketMaster API for fetching social events data and MapBox API for location and map data',
+            'Implemented push notifications and live chat using Socket.io'
+        ]
+    }
+}
+
+const ProjectDetail = () => {
+    let { projectName } = useParams();
+    const projectData = projectsData[`${projectName}`]
     return ( 
         <div className="container">
-            <h1>Projects</h1>
+            <h1>{projectData.projectName}</h1>
+            
             <div className="underline" ></div>  
-
+            <p className="summary">
+                {projectData.projectSummary}
+            </p>
             <div className="content">
                 <div className="left">
                     <div className="splide">
@@ -25,13 +81,11 @@ const ProjectDetail = (props) => {
                     </div>
                 </div>
                 <div className="right">
-                    <h2>{projectData.projectName}</h2>
-                    <p className="summary">
-                        {projectData.projectSummary}
-                    </p>
-                    <h3>Roles</h3>
+                    {/* <h2>{projectData.projectName}</h2> */}
+                    
+                    <h3>Scope</h3>
                     <div className="roles">
-                        {projectData.projectRoles && projectData.projectRoles.map(role => {
+                        {projectData.projectScopes && projectData.projectScopes.map(role => {
                             return(
                             <div className="role" key={role}>{role}</div>
                             )
