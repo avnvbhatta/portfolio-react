@@ -7,9 +7,9 @@
     min-height: 100vh;
     position: relative;
     top: -1px;
-    background-image: url('../../images/test.svg');
-
-    background-repeat: no-repeat;
+    background-image:  url('../../images/background.svg'), url('../../images/test.svg') ;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, contain;
 
     h1{
         padding-top: 4em;
@@ -70,17 +70,18 @@
             }
 
             .learn{
-                border: 2px solid  $primary-color-green;
+                // border: 2px solid  $primary-color-green;
                 outline: 0;
                 border-radius: 50px;
-                color: $primary-color-green;
+                color: white;
+                background: $accent;
+                height: 40px;
                 padding: 10px 20px;
                 transition: all 0.3s ease;
                 cursor: pointer;
                 text-decoration: none;
                 &:hover{
-                    background:$primary-color-green;
-                    color: white;
+                    background: #c00247;
                 }
             }
         }

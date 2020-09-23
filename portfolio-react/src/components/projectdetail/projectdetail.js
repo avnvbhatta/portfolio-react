@@ -7,6 +7,8 @@ import {
     useRouteMatch,
     useParams
   } from "react-router-dom";
+  import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const projectsData = {
     TagWithMe: {
@@ -59,26 +61,23 @@ const ProjectDetail = () => {
     return ( 
         <div className="container">
             <h1>{projectData.projectName}</h1>
-            
-            <div className="underline" ></div>  
+            <div className="underline"></div>
             <p className="summary">
                 {projectData.projectSummary}
             </p>
             <div className="content">
                 <div className="left">
-                    <div className="splide">
-                        <div className="splide__track">
-                            <ul className="splide__list">
-                                {projectData.projectScreenshots && projectData.projectScreenshots.map(screenshot => {
-                                    return(
-                                        <li className="splide__slide" key={projectData.projectName}>
-                                            <img src={screenshot} alt=""/>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    </div>
+                    <Carousel className="carousel" showThumbs={false}  infiniteLoop>
+                        {projectData.projectScreenshots && projectData.projectScreenshots.map(screenshot => {
+                            return (
+                                <div key="asd">
+                                    <img src={screenshot} />
+                                </div>
+                            )
+                        })}
+                       
+                        
+                    </Carousel>
                 </div>
                 <div className="right">
                     {/* <h2>{projectData.projectName}</h2> */}
