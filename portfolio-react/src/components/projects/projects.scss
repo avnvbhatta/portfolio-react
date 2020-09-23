@@ -4,15 +4,13 @@
 .portfolio{
     background:  $primary-color-green;
     text-align: center;
-    min-height: 100vh;
     position: relative;
     top: -1px;
-    background-image:  url('../../images/background.svg'), url('../../images/test.svg') ;
+    background-image:  url('../../images/background.svg') ;
     background-repeat: no-repeat, no-repeat;
     background-size: cover, contain;
 
     h1{
-        padding-top: 4em;
         font-size: 2.5em;
         color: $primary-color-blue
     }
