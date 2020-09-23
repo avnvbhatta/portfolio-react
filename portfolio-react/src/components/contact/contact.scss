@@ -67,10 +67,24 @@
                 background: $accent-hover;
             }
         }
-        .error{
-            align-self: flex-start;
-            font-size: 0.8em;
-            color: $accent;
-        }
+        
+    }
+
+    .error, .success{
+        height: 10vh;
+        color: white;
+        background: $accent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    
+    }
+    .error{
+        background: $accent;
+    }
+    .success{
+        background: $primary-color-blue;
     }
 }

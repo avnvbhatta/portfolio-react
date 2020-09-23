@@ -1,21 +1,65 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './contact.scss';
+import axios from "axios";
+import Spinner from '../spinner/spinner';
 const Contact = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [formSubmitStatus, setFormSubmitStatus] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        let formData = {
+            senderName: name,
+            senderEmail: email,
+            message: message
+        }
+        try {
+            let res = await axios.post('https://website-email-sender.herokuapp.com/', formData);
+            if(res.status === 200){
+                setFormSubmitStatus('success');
+                setName('');
+                setEmail('');
+                setMessage('');
+                setIsLoading(false);
+            }
+
+        } catch (error) {
+            setFormSubmitStatus('error');
+            setIsLoading(false);
+        }
+    }
+    
     return ( 
         <div className="contact">
             <div className="title">
                 <h1>Contact</h1>
                 <div className="underline" ></div>        
             </div>
-            <form id="form">
-                <input id="name" type="text" name="name" placeholder="Name" required />
-                <div id="nameError" className="error"></div>
-                <input id="email" type="email" name="email" placeholder="Email" required />
-                <div id="emailError" className="error"></div>
-                <textarea id="message" type="text" name="message" placeholder="Message" rows="4" cols="50" required></textarea>
-                <div id="messageError" className="error"></div>
-                <button id="submitBtn" type="submit">Submit</button>
+            <form id="form" onSubmit={handleSubmit}>
+                <input  type="text" name="name" placeholder="Name" required value={name} onChange={(e) => setName(e.target.value)}/>
+                
+                <input id="email" type="email" name="email" placeholder="Email" required value={email}  onChange={(e) => setEmail(e.target.value)}/>
+                
+                <textarea id="message" type="text" name="message" placeholder="Message" rows="4" cols="50" required value={message}  onChange={(e) => setMessage(e.target.value)}></textarea>
+                
+                {isLoading ? <Spinner /> : <button id="submitBtn" type="submit">Submit</button>} 
             </form>
+            
+            {
+                formSubmitStatus && <div className={formSubmitStatus}>
+                                        {formSubmitStatus === 'success' ? 
+                                        <div><div>Thank you for reaching out! </div> <div>I will get back to you shortly</div></div>
+                                        : <div><div>Something went wrong.</div><div>Please try again later.</div></div>}
+                                        </div>
+                                    
+            }
+            
+            
+
         </div>
      );
 }
