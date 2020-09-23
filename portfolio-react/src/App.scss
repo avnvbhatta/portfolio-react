@@ -1,0 +1,21 @@
+$primary-color-green: #01E08F;
+$primary-color-blue: #013870;
+$accent: #F2045B;
+
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.underline{
+  border-top: 5px $accent solid;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  margin-top: 10px;
+}
+
