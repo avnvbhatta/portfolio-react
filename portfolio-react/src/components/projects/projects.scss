@@ -5,14 +5,14 @@
     background:  $primary-color-green;
     text-align: center;
     position: relative;
-    top: -1px;
-    background-image:  url('../../images/background.svg') ;
-    background-repeat: no-repeat, no-repeat;
-    background-size: cover, contain;
+    background: #7510F7;
+    top: -1vh;
+    
 
     h1{
         font-size: 2.5em;
-        color: $primary-color-blue
+        color: $primary-color-green;
+        padding-top: 10vh;
     }
     .underline{
         color: #A7033F;
@@ -24,10 +24,12 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        max-width: 80%;
+        margin: auto;
     }
     .app{
         height: 300px;
-        background: $primary-color-blue;
+        background: #ffffff;
         background-image: url('../../images/fills_green.svg');
 
         background-size: cover;
@@ -64,16 +66,14 @@
 
             .desc{
                 font-size: 2em;
-                color: $primary-color-green;
+                color: #7510F7;
             }
 
             .learn{
-                // border: 2px solid  $primary-color-green;
                 outline: 0;
                 border-radius: 50px;
                 color: white;
                 background: $accent;
-                height: 40px;
                 padding: 10px 20px;
                 transition: all 0.3s ease;
                 cursor: pointer;

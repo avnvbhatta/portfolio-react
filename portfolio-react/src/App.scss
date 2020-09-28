@@ -1,5 +1,5 @@
-$primary-color-green: #01E08F;
-$primary-color-blue: #013870;
+$primary-color-green: white;
+$primary-color-blue: #7510F7;
 $accent: #F2045B;
 $accent-hover: #c00247;
 
@@ -8,7 +8,8 @@ $accent-hover: #c00247;
   margin:0;
   padding:0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Athiti', sans-serif;
+  font-weight: lighter;
 }
 
 .underline{
@@ -25,6 +26,6 @@ h1{
   font-family: 'Fira Sans', sans-serif;
 }
 
-* {
-  font-family: 'Athiti', sans-serif;
+body{
+  background: #7510F7;
 }

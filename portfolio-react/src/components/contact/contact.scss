@@ -36,6 +36,7 @@
             background: $primary-color-blue;
             outline: none;
             border: 1px solid $primary-color-green;
+            font-size: 1em;
             
             &::placeholder{
                 color: rgb(203, 201, 201);
@@ -53,7 +54,6 @@
         button{
             outline: 0;
             border: none;
-            font-size: 1em;;
             width: 150px;
             border-radius: 50px;
             color: white;
