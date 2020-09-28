@@ -11,8 +11,8 @@ const Home = () => {
         <div className="home">
             <NavBar />
             <Landing />
-            <Projects />
-            <Contact />
+            <Projects id='portfolio'/>
+            <Contact id='contact'/>
         </div>
      );
 }
