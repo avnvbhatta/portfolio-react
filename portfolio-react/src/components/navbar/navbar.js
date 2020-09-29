@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "./navbar.scss";
 import { Link } from 'react-scroll';
 import Menu from "../../images/menu.svg";
 import Close from "../../images/close.svg";
+import {TimelineLite, Power3, TweenMax} from "gsap";
 
 
 const NavBar = () => {
@@ -22,9 +23,15 @@ const NavBar = () => {
             </>
         )
     }
+    let navBar = useRef(null);
+    let tl = new TimelineLite();
+    useEffect(() => {
+        tl.fromTo(navBar, {opacity: 0, ease: Power3.easeOut, duration: 0.1, delay:4}, {opacity: 1, ease: Power3.easeOut, delay: 4}  )
+
+    }, [])
     return (
         <div>
-            <nav className="navbar">
+            <nav className="navbar" ref={el => navBar = el}>
                 <Links className="horizontal"/>
                 <img onClick={toggleDropdown} src={showDropdown ? Close : Menu}alt=""/>
             </nav>
