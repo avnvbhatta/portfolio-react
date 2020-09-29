@@ -2,16 +2,14 @@ import React from 'react';
 import './App.scss';
 import Home from './components/home/home';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
 import ProjectDetail from './components/projectdetail/projectdetail';
-
 function App() {
   return (
-    <Router>
-      
+    <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/:projectName">
             <ProjectDetail />
