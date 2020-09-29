@@ -13,10 +13,10 @@ const NavBar = () => {
     const Links = () => {
         return (
             <>
-                <Link className="nav-link" activeClass="active" to="portfolio" spy={true} smooth={true} duration={800} onClick={() => setShowDropdown(false)}>
+                <Link className="nav-link" activeClass="active" to="portfolio" spy={true} smooth={true} duration={800}  onClick={() => setShowDropdown(false)}>
                     Portfolio
                 </Link>
-                <Link className="nav-link" activeClass="active" to="contact" spy={true} smooth={true} duration={800}  onClick={() => setShowDropdown(false)}>
+                <Link className="nav-link" activeClass="active" to="contact" spy={true} smooth={true} duration={800} offset={150} onClick={() => setShowDropdown(false)}>
                     Contact Me
                 </Link>
             </>
@@ -31,6 +31,7 @@ const NavBar = () => {
             {showDropdown &&
                 <div className="dropdown">
                 <Links />
+                <div className="fill"></div>
             </div>
             }
         </div>

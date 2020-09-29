@@ -1,9 +1,6 @@
 import React from 'react';
 import './projects.scss';
-import TagWithMeLogo from "../../images/tagwithme.png";
-import TwitchStitchLogo from "../../images/twitchstitch.png";
-import MoodMateLogo from "../../images/moodmate.png";
-import ProjectDetail from '../projectdetail/projectdetail';
+import {MoodMateLogo, TagWithMeLogo, TwitchStitchLogo} from "../../images";
 import {Link} from "react-router-dom";
 
 
@@ -15,8 +12,7 @@ const Project = (props) => {
                 <div className="desc">
                     {props.projectName}
                 </div>
-                <Link className="learn" to={`/projectdetail/${props.projectName}`}>Learn More</Link>
-                {/* <a className="learn" href="#" target="_blank">Learn More</a> */}
+                <Link className="learn" to={`/${props.projectName}`}>Learn More</Link>
             </div>
         </div>
     )
@@ -35,7 +31,6 @@ const Projects = () => {
                 <Project projectLogo={TwitchStitchLogo} projectName='TwitchStitch'/>
                 <Project projectLogo={MoodMateLogo} projectName='MoodMate'/>
             </div>
-            {/* <ProjectDetail projectData={projectsData['tagWithMe']}/> */}
         </div> 
     )
 }

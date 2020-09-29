@@ -18,13 +18,11 @@
 }
 
 .nav-link{
-    padding: 0px 1em;
-    margin: 0px 1em;
+    padding: 0 1em 0 1.5em;
     outline: 0;
     font-weight: lighter;
     font-size: 1.5em;;
     color: $primary-color-blue;
-    padding: 0.8em 0.8em;
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
@@ -55,15 +53,18 @@
     right: 0;
     z-index: 2;
     width: 100%;
+
+
 }
 
 @media only screen and (max-width: 600px) {
     .navbar {
-    .nav-link{
-        display: none;
-    }
+        .nav-link{
+            display: none;
+            padding: 0;
+        }
       img{
           display: inline;
       }
     }
-  }
+}

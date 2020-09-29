@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import ProjectDetail from './components/projectdetail/projectdetail';
 
@@ -14,7 +13,7 @@ function App() {
     <Router>
       
         <Switch>
-          <Route path="/projectdetail/:projectName">
+          <Route path="/:projectName">
             <ProjectDetail />
           </Route>
           <Route path="/">

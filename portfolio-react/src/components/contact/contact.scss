@@ -19,6 +19,30 @@
             color: $accent;
         }
     }
+    .info{
+        display: flex;
+        flex-direction: column;
+        .email, .phone{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 1em;
+            font-size: 1.5em;
+            p{
+                margin-left: 1em;
+            }
+        }
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .or{
+        font-size: 2em;
+        color: white;   
+    }
     form{
         display: flex;
         flex-direction: column;
@@ -27,6 +51,11 @@
         margin: auto;
         padding: 1.5em;
         border-radius: 25px;
+
+        p{
+            font-size: 2em;
+            color: white;
+        }
         input, textarea, button {
             max-width: 500px;
             width: 100%;
