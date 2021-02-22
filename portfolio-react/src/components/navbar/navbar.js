@@ -15,10 +15,10 @@ const NavBar = () => {
         return (
             <>
                 <Link className="nav-link" activeClass="active" to="portfolio" spy={true} smooth={true} duration={800}  onClick={() => setShowDropdown(false)}>
-                    Portfolio
+                    <h2>portfolio</h2>
                 </Link>
                 <Link className="nav-link" activeClass="active" to="contact" spy={true} smooth={true} duration={800} offset={150} onClick={() => setShowDropdown(false)}>
-                    Contact Me
+                    <h2>contact me</h2>
                 </Link>
             </>
         )
