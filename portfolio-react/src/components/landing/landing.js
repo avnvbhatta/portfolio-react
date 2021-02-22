@@ -5,7 +5,7 @@ import LinkedInLogo from "../../images/linkedin.svg";
 import GithubLogo from "../../images/github.svg";
 import ResumeLogo from "../../images/resume.svg";
 import EmailLogo from "../../images/email.svg";
-import Resume from "../../images/resume.pdf";
+import Resume from "../../images/Resume_Abhinav_Bhatta.pdf";
 import Background from "../../images/background.svg";
 
 import {TimelineLite, Power3} from "gsap";
